@@ -23,7 +23,7 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-
+    
     - name: Test
       run: go test -v ./...
 
@@ -31,4 +31,6 @@ jobs:
       uses: norwd/golintr@v2.1.0
       with:
         path: ./...
-          
+  
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.1.0
